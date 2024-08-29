@@ -15,15 +15,17 @@ import lombok.NoArgsConstructor;
 @Entity(name = "tarefa")
 public class TarefaEntity {
 
-	public TarefaEntity(TarefaDto novaTarefa) {
-
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String titulo;
 	private String descricao;
-	private String completa;
-
+	private Boolean completa;
+	
+	public TarefaEntity(TarefaDto dto) {
+		this.id = dto.getId();
+		this.titulo = dto.getTitulo();
+		this.descricao = dto.getDescricao();
+		this.completa = dto.isCompleta();
+	}
 }

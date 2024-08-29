@@ -12,16 +12,12 @@ public class TarefaDto {
 	private Long id;
 	private String titulo;
 	private String descricao;
-	private String completa;
+	private boolean completa;
 
-	public TarefaDto(TarefaEntity dto) {
-		this.id = dto.getId();
-		this.titulo = dto.getTitulo();
-		this.descricao = dto.getDescricao();
-		this.completa = dto.getCompleta();
-	}
-
-	public TarefaDto(Object entidadePersistida) {
-
+	public TarefaDto(TarefaEntity entity) {
+		this.id = entity.getId();
+		this.titulo = entity.getTitulo();
+		this.descricao = entity.getDescricao();
+		this.completa = entity.getCompleta();
 	}
 }
