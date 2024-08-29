@@ -18,23 +18,20 @@ import lombok.NoArgsConstructor;
 public class ProdutoController {
 
 	private static Produto produto = new Produto();
-
 	@GetMapping
-	public Produto getProduto() {
+	public Produto getProduto(@RequestParam Integer id) {
 		return produto;
 	}
-
 	@PostMapping
 	public void salvaProduto(@RequestBody Produto produtoRequest) {
 		produto = produtoRequest;
 	}
-
 }
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-class Produto {
+class Produto{
 	private String nome;
 	private BigDecimal preco;
 }

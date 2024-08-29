@@ -40,7 +40,7 @@ public class TarefaController {
 
 	@PostMapping
 	public TarefaDto adicionarTarefa(@RequestBody TarefaDto novaTarefa) {
-		return tarefaService.adicionarTarefa(novaTarefa);
+	    return tarefaService.adicionarTarefa(novaTarefa);
 	}
 
 	@PutMapping("/{id}")

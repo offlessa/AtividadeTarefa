@@ -9,15 +9,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class TarefaDto {
-	private Long id;
-	private String titulo;
-	private String descricao;
-	private boolean completa;
+    private Long id;
+    private String titulo;
+    private String descricao;
+    private boolean completa;
+    private Integer categoriaId; 
 
-	public TarefaDto(TarefaEntity entity) {
-		this.id = entity.getId();
-		this.titulo = entity.getTitulo();
-		this.descricao = entity.getDescricao();
-		this.completa = entity.getCompleta();
-	}
+    public TarefaDto(TarefaEntity entity) {
+        this.id = entity.getId();
+        this.titulo = entity.getTitulo();
+        this.descricao = entity.getDescricao();
+        this.completa = entity.getCompleta();
+        if (entity.getCategoria() != null) {
+            this.categoriaId = entity.getCategoria().getId(); 
+        }
+    }
 }
